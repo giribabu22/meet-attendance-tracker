@@ -1,0 +1,29 @@
+{
+  "name": "Meet Attendance Tracker - dev",
+  "description": "The most accurate and reliable chrome extension to track attendance in meet.google.com with just a single click !",
+  "version": "1.7",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["*://meet.google.com/*-*-*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "script": ["event.js"],
+    "persistence": false
+  },
+  "options_page": "options.html",
+  "permissions": ["tabs", "storage"],
+  "action": {
+    "default_icon": "./images/meraki.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "./images/meraki16.png",
+    "48": "./images/meraki.png",
+    "128": "./images/meraki.png"
+  }
+}
